@@ -54,15 +54,15 @@ PROTOBUF_CONSTEXPR StatsOpt::StatsOpt(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.bucket_)*/{}
   , /*decltype(_impl_._bucket_cached_byte_size_)*/{0}
-  , /*decltype(_impl_.hour_bucket_)*/{}
-  , /*decltype(_impl_._hour_bucket_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.acc_bucket_)*/{}
+  , /*decltype(_impl_._acc_bucket_cached_byte_size_)*/{0}
   , /*decltype(_impl_.ts_)*/int64_t{0}
   , /*decltype(_impl_.show_)*/int64_t{0}
   , /*decltype(_impl_.click_)*/int64_t{0}
   , /*decltype(_impl_.cost_)*/int64_t{0}
-  , /*decltype(_impl_.hour_show_)*/int64_t{0}
-  , /*decltype(_impl_.hour_click_)*/int64_t{0}
-  , /*decltype(_impl_.hour_cost_)*/int64_t{0}
+  , /*decltype(_impl_.acc_show_)*/int64_t{0}
+  , /*decltype(_impl_.acc_click_)*/int64_t{0}
+  , /*decltype(_impl_.acc_cost_)*/int64_t{0}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct StatsOptDefaultTypeInternal {
   PROTOBUF_CONSTEXPR StatsOptDefaultTypeInternal()
@@ -109,11 +109,11 @@ const uint32_t TableStruct_proto_2fstats_2eproto::offsets[] PROTOBUF_SECTION_VAR
   PROTOBUF_FIELD_OFFSET(::proto::ad::StatsOpt, _impl_.show_),
   PROTOBUF_FIELD_OFFSET(::proto::ad::StatsOpt, _impl_.click_),
   PROTOBUF_FIELD_OFFSET(::proto::ad::StatsOpt, _impl_.cost_),
-  PROTOBUF_FIELD_OFFSET(::proto::ad::StatsOpt, _impl_.hour_show_),
-  PROTOBUF_FIELD_OFFSET(::proto::ad::StatsOpt, _impl_.hour_click_),
-  PROTOBUF_FIELD_OFFSET(::proto::ad::StatsOpt, _impl_.hour_cost_),
+  PROTOBUF_FIELD_OFFSET(::proto::ad::StatsOpt, _impl_.acc_show_),
+  PROTOBUF_FIELD_OFFSET(::proto::ad::StatsOpt, _impl_.acc_click_),
+  PROTOBUF_FIELD_OFFSET(::proto::ad::StatsOpt, _impl_.acc_cost_),
   PROTOBUF_FIELD_OFFSET(::proto::ad::StatsOpt, _impl_.bucket_),
-  PROTOBUF_FIELD_OFFSET(::proto::ad::StatsOpt, _impl_.hour_bucket_),
+  PROTOBUF_FIELD_OFFSET(::proto::ad::StatsOpt, _impl_.acc_bucket_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::proto::ad::Stats)},
@@ -132,15 +132,15 @@ const char descriptor_table_protodef_proto_2fstats_2eproto[] PROTOBUF_SECTION_VA
   "r_click\030\006 \001(\003\022\021\n\thour_cost\030\007 \001(\003\022\020\n\010acc_"
   "show\030\010 \001(\003\022\021\n\tacc_click\030\t \001(\003\022\020\n\010acc_cos"
   "t\030\n \001(\003\022\016\n\006bucket\030\013 \003(\003\022\023\n\013hour_bucket\030\014"
-  " \003(\003\022\022\n\nacc_bucket\030\r \003(\003\"\240\001\n\010StatsOpt\022\n\n"
+  " \003(\003\022\022\n\nacc_bucket\030\r \003(\003\"\234\001\n\010StatsOpt\022\n\n"
   "\002ts\030\001 \001(\003\022\014\n\004show\030\002 \001(\003\022\r\n\005click\030\003 \001(\003\022\014"
-  "\n\004cost\030\004 \001(\003\022\021\n\thour_show\030\005 \001(\003\022\022\n\nhour_"
-  "click\030\006 \001(\003\022\021\n\thour_cost\030\007 \001(\003\022\016\n\006bucket"
-  "\030\013 \003(\003\022\023\n\013hour_bucket\030\014 \003(\003b\006proto3"
+  "\n\004cost\030\004 \001(\003\022\020\n\010acc_show\030\005 \001(\003\022\021\n\tacc_cl"
+  "ick\030\006 \001(\003\022\020\n\010acc_cost\030\007 \001(\003\022\016\n\006bucket\030\013 "
+  "\003(\003\022\022\n\nacc_bucket\030\014 \003(\003b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_proto_2fstats_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_proto_2fstats_2eproto = {
-    false, false, 435, descriptor_table_protodef_proto_2fstats_2eproto,
+    false, false, 431, descriptor_table_protodef_proto_2fstats_2eproto,
     "proto/stats.proto",
     &descriptor_table_proto_2fstats_2eproto_once, nullptr, 0, 2,
     schemas, file_default_instances, TableStruct_proto_2fstats_2eproto::offsets,
@@ -703,21 +703,21 @@ StatsOpt::StatsOpt(const StatsOpt& from)
   new (&_impl_) Impl_{
       decltype(_impl_.bucket_){from._impl_.bucket_}
     , /*decltype(_impl_._bucket_cached_byte_size_)*/{0}
-    , decltype(_impl_.hour_bucket_){from._impl_.hour_bucket_}
-    , /*decltype(_impl_._hour_bucket_cached_byte_size_)*/{0}
+    , decltype(_impl_.acc_bucket_){from._impl_.acc_bucket_}
+    , /*decltype(_impl_._acc_bucket_cached_byte_size_)*/{0}
     , decltype(_impl_.ts_){}
     , decltype(_impl_.show_){}
     , decltype(_impl_.click_){}
     , decltype(_impl_.cost_){}
-    , decltype(_impl_.hour_show_){}
-    , decltype(_impl_.hour_click_){}
-    , decltype(_impl_.hour_cost_){}
+    , decltype(_impl_.acc_show_){}
+    , decltype(_impl_.acc_click_){}
+    , decltype(_impl_.acc_cost_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&_impl_.ts_, &from._impl_.ts_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.hour_cost_) -
-    reinterpret_cast<char*>(&_impl_.ts_)) + sizeof(_impl_.hour_cost_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.acc_cost_) -
+    reinterpret_cast<char*>(&_impl_.ts_)) + sizeof(_impl_.acc_cost_));
   // @@protoc_insertion_point(copy_constructor:proto.ad.StatsOpt)
 }
 
@@ -728,15 +728,15 @@ inline void StatsOpt::SharedCtor(
   new (&_impl_) Impl_{
       decltype(_impl_.bucket_){arena}
     , /*decltype(_impl_._bucket_cached_byte_size_)*/{0}
-    , decltype(_impl_.hour_bucket_){arena}
-    , /*decltype(_impl_._hour_bucket_cached_byte_size_)*/{0}
+    , decltype(_impl_.acc_bucket_){arena}
+    , /*decltype(_impl_._acc_bucket_cached_byte_size_)*/{0}
     , decltype(_impl_.ts_){int64_t{0}}
     , decltype(_impl_.show_){int64_t{0}}
     , decltype(_impl_.click_){int64_t{0}}
     , decltype(_impl_.cost_){int64_t{0}}
-    , decltype(_impl_.hour_show_){int64_t{0}}
-    , decltype(_impl_.hour_click_){int64_t{0}}
-    , decltype(_impl_.hour_cost_){int64_t{0}}
+    , decltype(_impl_.acc_show_){int64_t{0}}
+    , decltype(_impl_.acc_click_){int64_t{0}}
+    , decltype(_impl_.acc_cost_){int64_t{0}}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -753,7 +753,7 @@ StatsOpt::~StatsOpt() {
 inline void StatsOpt::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.bucket_.~RepeatedField();
-  _impl_.hour_bucket_.~RepeatedField();
+  _impl_.acc_bucket_.~RepeatedField();
 }
 
 void StatsOpt::SetCachedSize(int size) const {
@@ -767,10 +767,10 @@ void StatsOpt::Clear() {
   (void) cached_has_bits;
 
   _impl_.bucket_.Clear();
-  _impl_.hour_bucket_.Clear();
+  _impl_.acc_bucket_.Clear();
   ::memset(&_impl_.ts_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.hour_cost_) -
-      reinterpret_cast<char*>(&_impl_.ts_)) + sizeof(_impl_.hour_cost_));
+      reinterpret_cast<char*>(&_impl_.acc_cost_) -
+      reinterpret_cast<char*>(&_impl_.ts_)) + sizeof(_impl_.acc_cost_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -812,26 +812,26 @@ const char* StatsOpt::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
         } else
           goto handle_unusual;
         continue;
-      // int64 hour_show = 5;
+      // int64 acc_show = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          _impl_.hour_show_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.acc_show_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int64 hour_click = 6;
+      // int64 acc_click = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
-          _impl_.hour_click_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.acc_click_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int64 hour_cost = 7;
+      // int64 acc_cost = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
-          _impl_.hour_cost_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.acc_cost_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -847,13 +847,13 @@ const char* StatsOpt::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
         } else
           goto handle_unusual;
         continue;
-      // repeated int64 hour_bucket = 12;
+      // repeated int64 acc_bucket = 12;
       case 12:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 98)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt64Parser(_internal_mutable_hour_bucket(), ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt64Parser(_internal_mutable_acc_bucket(), ptr, ctx);
           CHK_(ptr);
         } else if (static_cast<uint8_t>(tag) == 96) {
-          _internal_add_hour_bucket(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
+          _internal_add_acc_bucket(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -911,22 +911,22 @@ uint8_t* StatsOpt::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteInt64ToArray(4, this->_internal_cost(), target);
   }
 
-  // int64 hour_show = 5;
-  if (this->_internal_hour_show() != 0) {
+  // int64 acc_show = 5;
+  if (this->_internal_acc_show() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt64ToArray(5, this->_internal_hour_show(), target);
+    target = ::_pbi::WireFormatLite::WriteInt64ToArray(5, this->_internal_acc_show(), target);
   }
 
-  // int64 hour_click = 6;
-  if (this->_internal_hour_click() != 0) {
+  // int64 acc_click = 6;
+  if (this->_internal_acc_click() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt64ToArray(6, this->_internal_hour_click(), target);
+    target = ::_pbi::WireFormatLite::WriteInt64ToArray(6, this->_internal_acc_click(), target);
   }
 
-  // int64 hour_cost = 7;
-  if (this->_internal_hour_cost() != 0) {
+  // int64 acc_cost = 7;
+  if (this->_internal_acc_cost() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt64ToArray(7, this->_internal_hour_cost(), target);
+    target = ::_pbi::WireFormatLite::WriteInt64ToArray(7, this->_internal_acc_cost(), target);
   }
 
   // repeated int64 bucket = 11;
@@ -938,12 +938,12 @@ uint8_t* StatsOpt::_InternalSerialize(
     }
   }
 
-  // repeated int64 hour_bucket = 12;
+  // repeated int64 acc_bucket = 12;
   {
-    int byte_size = _impl_._hour_bucket_cached_byte_size_.load(std::memory_order_relaxed);
+    int byte_size = _impl_._acc_bucket_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
       target = stream->WriteInt64Packed(
-          12, _internal_hour_bucket(), byte_size, target);
+          12, _internal_acc_bucket(), byte_size, target);
     }
   }
 
@@ -977,16 +977,16 @@ size_t StatsOpt::ByteSizeLong() const {
     total_size += data_size;
   }
 
-  // repeated int64 hour_bucket = 12;
+  // repeated int64 acc_bucket = 12;
   {
     size_t data_size = ::_pbi::WireFormatLite::
-      Int64Size(this->_impl_.hour_bucket_);
+      Int64Size(this->_impl_.acc_bucket_);
     if (data_size > 0) {
       total_size += 1 +
         ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
     }
     int cached_size = ::_pbi::ToCachedSize(data_size);
-    _impl_._hour_bucket_cached_byte_size_.store(cached_size,
+    _impl_._acc_bucket_cached_byte_size_.store(cached_size,
                                     std::memory_order_relaxed);
     total_size += data_size;
   }
@@ -1011,19 +1011,19 @@ size_t StatsOpt::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_cost());
   }
 
-  // int64 hour_show = 5;
-  if (this->_internal_hour_show() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_hour_show());
+  // int64 acc_show = 5;
+  if (this->_internal_acc_show() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_acc_show());
   }
 
-  // int64 hour_click = 6;
-  if (this->_internal_hour_click() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_hour_click());
+  // int64 acc_click = 6;
+  if (this->_internal_acc_click() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_acc_click());
   }
 
-  // int64 hour_cost = 7;
-  if (this->_internal_hour_cost() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_hour_cost());
+  // int64 acc_cost = 7;
+  if (this->_internal_acc_cost() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_acc_cost());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -1045,7 +1045,7 @@ void StatsOpt::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTO
   (void) cached_has_bits;
 
   _this->_impl_.bucket_.MergeFrom(from._impl_.bucket_);
-  _this->_impl_.hour_bucket_.MergeFrom(from._impl_.hour_bucket_);
+  _this->_impl_.acc_bucket_.MergeFrom(from._impl_.acc_bucket_);
   if (from._internal_ts() != 0) {
     _this->_internal_set_ts(from._internal_ts());
   }
@@ -1058,14 +1058,14 @@ void StatsOpt::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTO
   if (from._internal_cost() != 0) {
     _this->_internal_set_cost(from._internal_cost());
   }
-  if (from._internal_hour_show() != 0) {
-    _this->_internal_set_hour_show(from._internal_hour_show());
+  if (from._internal_acc_show() != 0) {
+    _this->_internal_set_acc_show(from._internal_acc_show());
   }
-  if (from._internal_hour_click() != 0) {
-    _this->_internal_set_hour_click(from._internal_hour_click());
+  if (from._internal_acc_click() != 0) {
+    _this->_internal_set_acc_click(from._internal_acc_click());
   }
-  if (from._internal_hour_cost() != 0) {
-    _this->_internal_set_hour_cost(from._internal_hour_cost());
+  if (from._internal_acc_cost() != 0) {
+    _this->_internal_set_acc_cost(from._internal_acc_cost());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1085,10 +1085,10 @@ void StatsOpt::InternalSwap(StatsOpt* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   _impl_.bucket_.InternalSwap(&other->_impl_.bucket_);
-  _impl_.hour_bucket_.InternalSwap(&other->_impl_.hour_bucket_);
+  _impl_.acc_bucket_.InternalSwap(&other->_impl_.acc_bucket_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(StatsOpt, _impl_.hour_cost_)
-      + sizeof(StatsOpt::_impl_.hour_cost_)
+      PROTOBUF_FIELD_OFFSET(StatsOpt, _impl_.acc_cost_)
+      + sizeof(StatsOpt::_impl_.acc_cost_)
       - PROTOBUF_FIELD_OFFSET(StatsOpt, _impl_.ts_)>(
           reinterpret_cast<char*>(&_impl_.ts_),
           reinterpret_cast<char*>(&other->_impl_.ts_));

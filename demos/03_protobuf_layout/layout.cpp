@@ -45,12 +45,11 @@ void test_ad_stat_opt() {
   std::cout << "bucket_cache_atomic "
             << offsetof(::proto::ad::StatsOpt::Impl_, _bucket_cached_byte_size_)
             << std::endl;
-  std::cout << "hour_bucket "
-            << offsetof(::proto::ad::StatsOpt::Impl_, hour_bucket_)
-            << std::endl;
-  std::cout << "hour_bucket_cache_atomic "
+  std::cout << "acc_bucket "
+            << offsetof(::proto::ad::StatsOpt::Impl_, acc_bucket_) << std::endl;
+  std::cout << "acc_bucket_cache_atomic "
             << offsetof(::proto::ad::StatsOpt::Impl_,
-                        _hour_bucket_cached_byte_size_)
+                        _acc_bucket_cached_byte_size_)
             << std::endl;
   std::cout << "ts_ " << offsetof(::proto::ad::StatsOpt::Impl_, ts_)
             << std::endl;
