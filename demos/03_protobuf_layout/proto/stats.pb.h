@@ -508,14 +508,14 @@ class StatsOpt final :
 
   enum : int {
     kBucketFieldNumber = 11,
-    kHourBucketFieldNumber = 12,
+    kAccBucketFieldNumber = 12,
     kTsFieldNumber = 1,
     kShowFieldNumber = 2,
     kClickFieldNumber = 3,
     kCostFieldNumber = 4,
-    kHourShowFieldNumber = 5,
-    kHourClickFieldNumber = 6,
-    kHourCostFieldNumber = 7,
+    kAccShowFieldNumber = 5,
+    kAccClickFieldNumber = 6,
+    kAccCostFieldNumber = 7,
   };
   // repeated int64 bucket = 11;
   int bucket_size() const;
@@ -539,27 +539,27 @@ class StatsOpt final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< int64_t >*
       mutable_bucket();
 
-  // repeated int64 hour_bucket = 12;
-  int hour_bucket_size() const;
+  // repeated int64 acc_bucket = 12;
+  int acc_bucket_size() const;
   private:
-  int _internal_hour_bucket_size() const;
+  int _internal_acc_bucket_size() const;
   public:
-  void clear_hour_bucket();
+  void clear_acc_bucket();
   private:
-  int64_t _internal_hour_bucket(int index) const;
+  int64_t _internal_acc_bucket(int index) const;
   const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int64_t >&
-      _internal_hour_bucket() const;
-  void _internal_add_hour_bucket(int64_t value);
+      _internal_acc_bucket() const;
+  void _internal_add_acc_bucket(int64_t value);
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< int64_t >*
-      _internal_mutable_hour_bucket();
+      _internal_mutable_acc_bucket();
   public:
-  int64_t hour_bucket(int index) const;
-  void set_hour_bucket(int index, int64_t value);
-  void add_hour_bucket(int64_t value);
+  int64_t acc_bucket(int index) const;
+  void set_acc_bucket(int index, int64_t value);
+  void add_acc_bucket(int64_t value);
   const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int64_t >&
-      hour_bucket() const;
+      acc_bucket() const;
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< int64_t >*
-      mutable_hour_bucket();
+      mutable_acc_bucket();
 
   // int64 ts = 1;
   void clear_ts();
@@ -597,31 +597,31 @@ class StatsOpt final :
   void _internal_set_cost(int64_t value);
   public:
 
-  // int64 hour_show = 5;
-  void clear_hour_show();
-  int64_t hour_show() const;
-  void set_hour_show(int64_t value);
+  // int64 acc_show = 5;
+  void clear_acc_show();
+  int64_t acc_show() const;
+  void set_acc_show(int64_t value);
   private:
-  int64_t _internal_hour_show() const;
-  void _internal_set_hour_show(int64_t value);
+  int64_t _internal_acc_show() const;
+  void _internal_set_acc_show(int64_t value);
   public:
 
-  // int64 hour_click = 6;
-  void clear_hour_click();
-  int64_t hour_click() const;
-  void set_hour_click(int64_t value);
+  // int64 acc_click = 6;
+  void clear_acc_click();
+  int64_t acc_click() const;
+  void set_acc_click(int64_t value);
   private:
-  int64_t _internal_hour_click() const;
-  void _internal_set_hour_click(int64_t value);
+  int64_t _internal_acc_click() const;
+  void _internal_set_acc_click(int64_t value);
   public:
 
-  // int64 hour_cost = 7;
-  void clear_hour_cost();
-  int64_t hour_cost() const;
-  void set_hour_cost(int64_t value);
+  // int64 acc_cost = 7;
+  void clear_acc_cost();
+  int64_t acc_cost() const;
+  void set_acc_cost(int64_t value);
   private:
-  int64_t _internal_hour_cost() const;
-  void _internal_set_hour_cost(int64_t value);
+  int64_t _internal_acc_cost() const;
+  void _internal_set_acc_cost(int64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:proto.ad.StatsOpt)
@@ -635,15 +635,15 @@ class StatsOpt final :
     struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::RepeatedField< int64_t > bucket_;
     mutable std::atomic<int> _bucket_cached_byte_size_;
-    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int64_t > hour_bucket_;
-    mutable std::atomic<int> _hour_bucket_cached_byte_size_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int64_t > acc_bucket_;
+    mutable std::atomic<int> _acc_bucket_cached_byte_size_;
     int64_t ts_;
     int64_t show_;
     int64_t click_;
     int64_t cost_;
-    int64_t hour_show_;
-    int64_t hour_click_;
-    int64_t hour_cost_;
+    int64_t acc_show_;
+    int64_t acc_click_;
+    int64_t acc_cost_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -1085,64 +1085,64 @@ inline void StatsOpt::set_cost(int64_t value) {
   // @@protoc_insertion_point(field_set:proto.ad.StatsOpt.cost)
 }
 
-// int64 hour_show = 5;
-inline void StatsOpt::clear_hour_show() {
-  _impl_.hour_show_ = int64_t{0};
+// int64 acc_show = 5;
+inline void StatsOpt::clear_acc_show() {
+  _impl_.acc_show_ = int64_t{0};
 }
-inline int64_t StatsOpt::_internal_hour_show() const {
-  return _impl_.hour_show_;
+inline int64_t StatsOpt::_internal_acc_show() const {
+  return _impl_.acc_show_;
 }
-inline int64_t StatsOpt::hour_show() const {
-  // @@protoc_insertion_point(field_get:proto.ad.StatsOpt.hour_show)
-  return _internal_hour_show();
+inline int64_t StatsOpt::acc_show() const {
+  // @@protoc_insertion_point(field_get:proto.ad.StatsOpt.acc_show)
+  return _internal_acc_show();
 }
-inline void StatsOpt::_internal_set_hour_show(int64_t value) {
+inline void StatsOpt::_internal_set_acc_show(int64_t value) {
   
-  _impl_.hour_show_ = value;
+  _impl_.acc_show_ = value;
 }
-inline void StatsOpt::set_hour_show(int64_t value) {
-  _internal_set_hour_show(value);
-  // @@protoc_insertion_point(field_set:proto.ad.StatsOpt.hour_show)
+inline void StatsOpt::set_acc_show(int64_t value) {
+  _internal_set_acc_show(value);
+  // @@protoc_insertion_point(field_set:proto.ad.StatsOpt.acc_show)
 }
 
-// int64 hour_click = 6;
-inline void StatsOpt::clear_hour_click() {
-  _impl_.hour_click_ = int64_t{0};
+// int64 acc_click = 6;
+inline void StatsOpt::clear_acc_click() {
+  _impl_.acc_click_ = int64_t{0};
 }
-inline int64_t StatsOpt::_internal_hour_click() const {
-  return _impl_.hour_click_;
+inline int64_t StatsOpt::_internal_acc_click() const {
+  return _impl_.acc_click_;
 }
-inline int64_t StatsOpt::hour_click() const {
-  // @@protoc_insertion_point(field_get:proto.ad.StatsOpt.hour_click)
-  return _internal_hour_click();
+inline int64_t StatsOpt::acc_click() const {
+  // @@protoc_insertion_point(field_get:proto.ad.StatsOpt.acc_click)
+  return _internal_acc_click();
 }
-inline void StatsOpt::_internal_set_hour_click(int64_t value) {
+inline void StatsOpt::_internal_set_acc_click(int64_t value) {
   
-  _impl_.hour_click_ = value;
+  _impl_.acc_click_ = value;
 }
-inline void StatsOpt::set_hour_click(int64_t value) {
-  _internal_set_hour_click(value);
-  // @@protoc_insertion_point(field_set:proto.ad.StatsOpt.hour_click)
+inline void StatsOpt::set_acc_click(int64_t value) {
+  _internal_set_acc_click(value);
+  // @@protoc_insertion_point(field_set:proto.ad.StatsOpt.acc_click)
 }
 
-// int64 hour_cost = 7;
-inline void StatsOpt::clear_hour_cost() {
-  _impl_.hour_cost_ = int64_t{0};
+// int64 acc_cost = 7;
+inline void StatsOpt::clear_acc_cost() {
+  _impl_.acc_cost_ = int64_t{0};
 }
-inline int64_t StatsOpt::_internal_hour_cost() const {
-  return _impl_.hour_cost_;
+inline int64_t StatsOpt::_internal_acc_cost() const {
+  return _impl_.acc_cost_;
 }
-inline int64_t StatsOpt::hour_cost() const {
-  // @@protoc_insertion_point(field_get:proto.ad.StatsOpt.hour_cost)
-  return _internal_hour_cost();
+inline int64_t StatsOpt::acc_cost() const {
+  // @@protoc_insertion_point(field_get:proto.ad.StatsOpt.acc_cost)
+  return _internal_acc_cost();
 }
-inline void StatsOpt::_internal_set_hour_cost(int64_t value) {
+inline void StatsOpt::_internal_set_acc_cost(int64_t value) {
   
-  _impl_.hour_cost_ = value;
+  _impl_.acc_cost_ = value;
 }
-inline void StatsOpt::set_hour_cost(int64_t value) {
-  _internal_set_hour_cost(value);
-  // @@protoc_insertion_point(field_set:proto.ad.StatsOpt.hour_cost)
+inline void StatsOpt::set_acc_cost(int64_t value) {
+  _internal_set_acc_cost(value);
+  // @@protoc_insertion_point(field_set:proto.ad.StatsOpt.acc_cost)
 }
 
 // repeated int64 bucket = 11;
@@ -1192,51 +1192,51 @@ StatsOpt::mutable_bucket() {
   return _internal_mutable_bucket();
 }
 
-// repeated int64 hour_bucket = 12;
-inline int StatsOpt::_internal_hour_bucket_size() const {
-  return _impl_.hour_bucket_.size();
+// repeated int64 acc_bucket = 12;
+inline int StatsOpt::_internal_acc_bucket_size() const {
+  return _impl_.acc_bucket_.size();
 }
-inline int StatsOpt::hour_bucket_size() const {
-  return _internal_hour_bucket_size();
+inline int StatsOpt::acc_bucket_size() const {
+  return _internal_acc_bucket_size();
 }
-inline void StatsOpt::clear_hour_bucket() {
-  _impl_.hour_bucket_.Clear();
+inline void StatsOpt::clear_acc_bucket() {
+  _impl_.acc_bucket_.Clear();
 }
-inline int64_t StatsOpt::_internal_hour_bucket(int index) const {
-  return _impl_.hour_bucket_.Get(index);
+inline int64_t StatsOpt::_internal_acc_bucket(int index) const {
+  return _impl_.acc_bucket_.Get(index);
 }
-inline int64_t StatsOpt::hour_bucket(int index) const {
-  // @@protoc_insertion_point(field_get:proto.ad.StatsOpt.hour_bucket)
-  return _internal_hour_bucket(index);
+inline int64_t StatsOpt::acc_bucket(int index) const {
+  // @@protoc_insertion_point(field_get:proto.ad.StatsOpt.acc_bucket)
+  return _internal_acc_bucket(index);
 }
-inline void StatsOpt::set_hour_bucket(int index, int64_t value) {
-  _impl_.hour_bucket_.Set(index, value);
-  // @@protoc_insertion_point(field_set:proto.ad.StatsOpt.hour_bucket)
+inline void StatsOpt::set_acc_bucket(int index, int64_t value) {
+  _impl_.acc_bucket_.Set(index, value);
+  // @@protoc_insertion_point(field_set:proto.ad.StatsOpt.acc_bucket)
 }
-inline void StatsOpt::_internal_add_hour_bucket(int64_t value) {
-  _impl_.hour_bucket_.Add(value);
+inline void StatsOpt::_internal_add_acc_bucket(int64_t value) {
+  _impl_.acc_bucket_.Add(value);
 }
-inline void StatsOpt::add_hour_bucket(int64_t value) {
-  _internal_add_hour_bucket(value);
-  // @@protoc_insertion_point(field_add:proto.ad.StatsOpt.hour_bucket)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int64_t >&
-StatsOpt::_internal_hour_bucket() const {
-  return _impl_.hour_bucket_;
+inline void StatsOpt::add_acc_bucket(int64_t value) {
+  _internal_add_acc_bucket(value);
+  // @@protoc_insertion_point(field_add:proto.ad.StatsOpt.acc_bucket)
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int64_t >&
-StatsOpt::hour_bucket() const {
-  // @@protoc_insertion_point(field_list:proto.ad.StatsOpt.hour_bucket)
-  return _internal_hour_bucket();
+StatsOpt::_internal_acc_bucket() const {
+  return _impl_.acc_bucket_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int64_t >&
+StatsOpt::acc_bucket() const {
+  // @@protoc_insertion_point(field_list:proto.ad.StatsOpt.acc_bucket)
+  return _internal_acc_bucket();
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int64_t >*
-StatsOpt::_internal_mutable_hour_bucket() {
-  return &_impl_.hour_bucket_;
+StatsOpt::_internal_mutable_acc_bucket() {
+  return &_impl_.acc_bucket_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int64_t >*
-StatsOpt::mutable_hour_bucket() {
-  // @@protoc_insertion_point(field_mutable_list:proto.ad.StatsOpt.hour_bucket)
-  return _internal_mutable_hour_bucket();
+StatsOpt::mutable_acc_bucket() {
+  // @@protoc_insertion_point(field_mutable_list:proto.ad.StatsOpt.acc_bucket)
+  return _internal_mutable_acc_bucket();
 }
 
 #ifdef __GNUC__

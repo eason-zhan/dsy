@@ -19,14 +19,14 @@ message Stats {
 }
 
 message StatsOpt {
-    int64 ts                   = 1;
-    int64 show                 = 2;
-    int64 click                = 3;
-    int64 cost                 = 4;
-    int64 hour_show            = 5;
-    int64 hour_click           = 6;
-    int64 hour_cost            = 7;
-    repeated int64 bucket      = 11;
-    repeated int64 hour_bucket = 12;
+    int64 ts                  = 1;
+    int64 show                = 2;
+    int64 click               = 3;
+    int64 cost                = 4;
+    int64 acc_show            = 5;
+    int64 acc_click           = 6;
+    int64 acc_cost            = 7;
+    repeated int64 bucket     = 11;
+    repeated int64 acc_bucket = 12;
 }
 
