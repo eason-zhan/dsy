@@ -1,0 +1,6 @@
+2 3 
+<tag v1 = "1 23" v2 = "43.4" v3 = "hello">
+</tag>
+tag1~v1
+tag1~v2
+tag1~v3
